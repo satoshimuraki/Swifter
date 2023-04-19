@@ -36,7 +36,7 @@ public extension Swifter {
                failure: FailureHandler? = nil) {
         let path = "users/me"
 
-        self.getJSON(path: path, baseURL: .api, parameters: [:], success: { json, _ in
+        self.getJSON(path: path, baseURL: .api2, parameters: [:], success: { json, _ in
             success?(json)
         }, failure: failure)
     }
@@ -50,7 +50,7 @@ public extension Swifter {
                             failure: FailureHandler? = nil) {
         let path = "account/settings.json"
 
-        self.getJSON(path: path, baseURL: .api2, parameters: [:], success: { json, _ in
+        self.getJSON(path: path, baseURL: .api, parameters: [:], success: { json, _ in
 			success?(json)
 		}, failure: failure)
     }
