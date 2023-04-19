@@ -28,6 +28,20 @@ import Foundation
 public extension Swifter {
 
     /**
+    GET    /2/user/me
+
+    Returns settings (including current trend, geo and sleep time information) for the authenticating user.
+    */
+    func getMe(success: SuccessHandler? = nil,
+               failure: FailureHandler? = nil) {
+        let path = "users/me"
+
+        self.getJSON(path: path, baseURL: .api, parameters: [:], success: { json, _ in
+            success?(json)
+        }, failure: failure)
+    }
+
+    /**
     GET    account/settings
 
     Returns settings (including current trend, geo and sleep time information) for the authenticating user.
